@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets"
+          Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')" />
+  <PropertyGroup>
+    <Name>ShopDatabase</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033,CI</ModelCollation>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Build Include="SchemaObjects\Tables\Members.sql" />
+    <Build Include="SchemaObjects\Tables\Orders.sql" />
+    <Build Include="SchemaObjects\Tables\EventJoin.sql" />
+    <Build Include="SchemaObjects\StoredProcedures\usp_GetMemberOrders.sql" />
+    <Build Include="SchemaObjects\StoredProcedures\usp_JoinEvent.sql" />
+  </ItemGroup>
+</Project>
